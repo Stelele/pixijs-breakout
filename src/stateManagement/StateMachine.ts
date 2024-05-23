@@ -1,10 +1,13 @@
 import { Ticker } from "pixi.js";
-import { IState, NullState } from "./states";
+import { IState, NullState, PlayState, StartState } from "./states";
 
 export class StateMachine {
     private static states: Record<string, () => IState> = {
-        'null': () => new NullState()
+        'null': () => new NullState(),
+        'start': () => new StartState(),
+        'play': () => new PlayState()
     }
+
     private static currentstate: IState
 
     public static change(stateName: string) {

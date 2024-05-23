@@ -62,7 +62,7 @@ export class Manager {
         Manager.resize()
 
         InputManager.initilize()
-        StateMachine.change("title")
+        StateMachine.change("start")
     }
 
     private static async addBackgroundScene() {
@@ -94,7 +94,6 @@ export class Manager {
     // This update will be called by a pixi ticker and tell the scene that a tick happened
     private static update(ticker: Ticker): void {
         StateMachine.update(ticker)
-        InputManager.reset()
     }
 
     private static backgroundUpdate(ticker: Ticker) {
